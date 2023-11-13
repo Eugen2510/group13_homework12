@@ -12,6 +12,7 @@ import org.thymeleaf.context.Context;
 import org.thymeleaf.templateresolver.FileTemplateResolver;
 
 import java.io.IOException;
+import java.net.URL;
 import java.util.*;
 
 @WebServlet("/time")
@@ -20,8 +21,9 @@ public class TimeServlet extends HttpServlet {
     @Override
     public void init() {
         engine = new TemplateEngine();
+        URL resource = this.getClass().getResource("/templates");
         FileTemplateResolver resolver = new FileTemplateResolver();
-        resolver.setPrefix("C:/Users/Admin/IdeaProjects/GoIT_JavaDeveloper/group13/homework/module12_hw/templates/");
+        resolver.setPrefix(resource.getPath());
         resolver.setSuffix(".html");
         resolver.setTemplateMode("HTML5");
         resolver.setCharacterEncoding("UTF-8");
