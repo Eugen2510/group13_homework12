@@ -44,6 +44,7 @@ public class TimeServlet extends HttpServlet {
                 req.getLocale(),
                 params
         );
+//        resp.setContentType("application/json");
 
         try {
             engine.process("time", simpleContext, resp.getWriter());
